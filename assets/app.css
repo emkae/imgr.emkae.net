@@ -1,0 +1,30 @@
+#filelist {
+  border: 1px solid #000;
+  background-color:#191e25;
+  width: 100%;
+}
+#archive img, #file-list img {
+  max-width: 200px;
+  max-height: 200px;
+}
+#archive input.filename {
+  word-wrap: break-word;
+}
+#files {
+  background-color:#191e25;
+  color: #fff;
+}
+#drop-area {
+  background-color:#191e25;
+  height: 200px;
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 200%;
+  width: 100%;
+}
+#drop-area span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}

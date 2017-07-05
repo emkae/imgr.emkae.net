@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ImgR</title>
+    <style>
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(SourceCodePro-Regular.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+html,body {
+  font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;
+  background-color:#272b30;
+}
+#app {
+  display: none;
+  margin: 0 auto;
+  width: 776px;
+  max-width: 95%;
+  height: 100%;
+  padding: 20px;
+  font-family:"Source Code Pro";
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  margin-top: -3rem;
+}
+
+.loader {
+  margin: 5% auto;
+  display: block;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border-top: 16px solid #3498DB;
+  border-right: 16px solid #82BF56;
+  border-bottom: 16px solid #E74C3C;
+  border-left: 16px solid #F2CF66;
+}
+#nav, #app section {display:none;}
+#app section#login-section {
+  display:block;
+  margin: 0 auto;
+  width: 420px;
+  max-width: 100%;
+}
+    </style>
+  </head>
+  <body>
+    <div id=loader class="loader"></div>
+    <div id=app>
+      <ul id="nav" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#" id="nav-link-upload">Upload</a></li>
+        <li role="presentation"><a href="#" id="nav-link-list">List</a></li>
+        <li role="presentation"><a href="#" id="nav-link-logout">Logout</a></li>
+      </ul>
+      <section id="login-section">
+        <h2>Login</h2>
+        <form id="loginform">
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">E-Mail</label>
+            <input type="email" class="form-control" id="email" placeholder="noreply@emkae.net" />
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <input type="password" class="form-control" id="password" />
+          </div>
+          <button class="btn btn-success">Login</button>
+        </form>
+      </section>
+      <section id="upload-section">
+        <h2>Upload</h2>
+        <div id="filelist">
+        </div>
+        <form id="uploadform">
+          <div class="form-group">
+            <input type="file" class="form-control" id="files" accept="image/gif, image/jpeg, image/png" multiple />
+            <div id="drop-area">
+              <span class="drop-over">Drop files here!</span>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section id="list-section">
+        <h2>Archive List</h2>
+        <div id="archive">
+        </div>
+      </section>
+    </div>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/themes/slate/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <script src="assets/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/clipboard.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
